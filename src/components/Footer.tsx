@@ -22,9 +22,7 @@ const Footer: React.FC = () => {
       className={`relative bottom-0 py-4 w-full text-center ${theme === "light" ? "bg-light-mode text-dark-mode" : "bg-dark-mode text-light-mode"}`}
     >
       <p>
-        {getLinkElement("https://seanfinch.com", "seanfinch.com")} • Website
-        coded with help from{" "}
-        {getLinkElement("https://asahoo.dev", "asahoo.dev")}
+        {getLinkElement("https://seanfinch.com", "seanfinch.com")}
       </p>
     </footer>
   );
