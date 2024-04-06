@@ -1,6 +1,6 @@
-# Sean's Portfolio Website
+# Whenabouts
 
-Welcome to my portfolio website! Here, you'll find a showcase of my latest projects, my skills and experiences in software development, and ways to get in touch with me. Explore to learn more about my journey in coding and the work I've done.
+A web application that takes in an itinerary for a business trip that crosses timezones and outputs the time in each timezone. Currently a work in progress.
 
 ### Technologies used:
 
@@ -14,4 +14,4 @@ Welcome to my portfolio website! Here, you'll find a showcase of my latest proje
 
 ### Deployment:
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3965718f-bcb6-4335-9b1b-22206dd9f383/deploy-status)](https://app.netlify.com/sites/seanfinch/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f2964b9e-b9d4-4df0-a8bf-ac851001ebb2/deploy-status)](https://app.netlify.com/sites/seanfinch/deploys)
