@@ -2,15 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./contexts/themeContext";
 import Layout from "./layouts/Layout";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
   <Routes>
-    <Route path="/"/>
-    <Route path="seanfinch.com/projects"/>
-    <Route path="seanfinch.com/music"/>
-    <Route path="seanfinch.com/contact"/>
-    <Route path="seanfinch.com/about"/>
+    <Route path="/" element={<Home />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
