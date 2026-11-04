@@ -11,7 +11,9 @@ const Footer: React.FC = () => {
   const getLinkElement = (url: string, text: string) => (
     <span
       className="font-medium text-indigo-500 hover:text-indigo-600"
-      onClick={() => openLinkInNewTab(url)}
+      onClick={() => {
+        openLinkInNewTab(url);
+      }}
     >
       {text}
     </span>

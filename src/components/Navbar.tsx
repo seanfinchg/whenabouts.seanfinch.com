@@ -55,11 +55,22 @@ const Navbar: React.FC = () => {
       className={`w-full text-center flex justify-between px-4 h-24 md:h-16 items-center ${getThemeCSS()}`}
     >
       <div className="flex items-center w-full">
-        <button className="text-6xl md:invisible" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="text-6xl md:invisible"
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
           ☰
         </button>
         <div className={getStyleForMobileNavbar()}>
-          {(isOpen || !isMobile) && <Links onClick={() => setIsOpen(false)} />}
+          {(isOpen || !isMobile) && (
+            <Links
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            />
+          )}
           {!isMobile && (
             <button onClick={toggleTheme} className="text-5xl md:text-xl">
               {theme === "light" ? <FaMoon /> : <FaSun />}
