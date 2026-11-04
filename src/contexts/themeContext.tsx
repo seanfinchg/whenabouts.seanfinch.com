@@ -7,17 +7,12 @@ type ThemeContextProps = {
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 };
 
-export const ThemeContext = createContext<ThemeContextProps | undefined>(
-  undefined,
-);
+export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const preferredTheme =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
     return preferredTheme;
@@ -40,11 +35,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     root.classList.add(theme);
   }, [theme]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => {
