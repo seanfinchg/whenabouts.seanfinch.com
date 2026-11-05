@@ -46,9 +46,7 @@ const Navbar: React.FC = () => {
   const getStyleForMobileNavbar = (): string => {
     return isMobile
       ? `fixed top-24 left-0 w-screen rounded-br-lg rounded-bl-lg ${getThemeCSS()} flex flex-col 
-        transition-opacity transition-height ${
-          isOpen ? "opacity-100 h-auto" : "opacity-0 h-0"
-        }`
+        transition-opacity transition-height ${isOpen ? "opacity-100 h-auto" : "opacity-0 h-0"}`
       : "w-full flex justify-around items-center";
   };
 
@@ -59,12 +57,20 @@ const Navbar: React.FC = () => {
       <div className="flex items-center w-full">
         <button
           className="text-6xl md:invisible"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
         >
           ☰
         </button>
         <div className={getStyleForMobileNavbar()}>
-          {(isOpen || !isMobile) && <Links onClick={() => setIsOpen(false)} />}
+          {(isOpen || !isMobile) && (
+            <Links
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            />
+          )}
           {!isMobile && (
             <button onClick={toggleTheme} className="text-5xl md:text-xl">
               {theme === "light" ? <FaMoon /> : <FaSun />}

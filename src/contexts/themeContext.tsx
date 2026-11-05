@@ -7,25 +7,22 @@ type ThemeContextProps = {
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 };
 
-export const ThemeContext = createContext<ThemeContextProps | undefined>(
-  undefined,
-);
+// eslint-disable-next-line react-refresh/only-export-components -- context colocated with its provider
+export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const preferredTheme =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
     return preferredTheme;
   });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const changeTheme = () => setTheme(mediaQuery.matches ? "dark" : "light");
+    const changeTheme = () => {
+      setTheme(mediaQuery.matches ? "dark" : "light");
+    };
 
     mediaQuery.addEventListener("change", changeTheme);
 
@@ -40,13 +37,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     root.classList.add(theme);
   }, [theme]);
 
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components -- hook colocated with its provider
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
