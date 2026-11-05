@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 import { useMediaQuery } from "react-responsive";
 import { useTheme } from "../contexts/themeContext";
 import { FaMoon, FaSun } from "react-icons/fa";

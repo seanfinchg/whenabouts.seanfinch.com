@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useTheme } from "../contexts/themeContext";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -18,7 +18,7 @@ const HomeButton: React.FC<ButtonProps> = ({ children }) => {
   }`;
 
   const goToHomePage = () => {
-    navigate("/");
+    void navigate("/");
   };
 
   return (
