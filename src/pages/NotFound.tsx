@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { useTheme } from "../contexts/themeContext";
+import { useTheme } from "../contexts/theme";
 import { FaArrowLeft } from "react-icons/fa";
 
 interface ButtonProps {
