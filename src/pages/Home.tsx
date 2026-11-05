@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useTheme } from "../contexts/themeContext";
+import { useTheme } from "../contexts/theme";
 
 function Home() {
   const { theme } = useTheme();
