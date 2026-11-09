@@ -1,6 +1,24 @@
-@import "../node_modules/@fontsource/roboto-slab/index.css";
-@import "../node_modules/@fontsource/raleway/index.css";
-@import "../node_modules/@fontsource/jost/index.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "@fontsource/roboto-slab/index.css";
+@import "@fontsource/raleway/index.css";
+@import "@fontsource/jost/index.css";
+@import "tailwindcss";
+
+@theme {
+  --font-raleway: "Raleway", monospace;
+  --font-roboto-slab: "Roboto Slab", monospace;
+  --font-jost: "Jost", monospace;
+
+  --color-dark-mode: #242424;
+  --color-ultra-dark-mode: #1a1a1a;
+  --color-light-mode: #ffffff;
+  --color-ultra-light-mode: #d2d3db;
+  --color-linkedin: #0077b5;
+}
+
+@layer base {
+  /* Tailwind 4 preflight resets buttons to cursor: default; keep the v3 pointer. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}

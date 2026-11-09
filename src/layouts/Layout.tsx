@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useTheme } from "../contexts/themeContext";
+import { useTheme } from "../contexts/theme";
 
 type LayoutProps = {
   children: React.ReactNode;

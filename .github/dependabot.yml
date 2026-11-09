@@ -15,6 +15,10 @@ updates:
     ignore:
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
+      # TypeScript 7 passes tsc here, but typescript-eslint 8.72 refuses it (peer
+      # typescript <6.1.0, "does not support TS 7.0"). Drop this once it supports 7.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       minor-patch:
         update-types: [minor, patch]
