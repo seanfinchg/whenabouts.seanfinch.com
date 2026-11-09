@@ -1,0 +1,12 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+# Non-production deploys (Deploy Previews and branch deploys of dev/stage) must stay out of
+# search indexes. The script adds X-Robots-Tag noindex and a Disallow-all robots.txt, and
+# refuses to run when CONTEXT is production.
+[context.deploy-preview]
+command = "npm run build && node scripts/netlify-noindex.mjs"
+
+[context.branch-deploy]
+command = "npm run build && node scripts/netlify-noindex.mjs"
