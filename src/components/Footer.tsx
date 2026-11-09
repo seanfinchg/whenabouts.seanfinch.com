@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "../contexts/themeContext";
+import { useTheme } from "../contexts/theme";
 
 const Footer: React.FC = () => {
   const { theme } = useTheme();
@@ -11,7 +11,9 @@ const Footer: React.FC = () => {
   const getLinkElement = (url: string, text: string) => (
     <span
       className="font-medium text-indigo-500 hover:text-indigo-600"
-      onClick={() => openLinkInNewTab(url)}
+      onClick={() => {
+        openLinkInNewTab(url);
+      }}
     >
       {text}
     </span>
@@ -21,9 +23,7 @@ const Footer: React.FC = () => {
     <footer
       className={`relative bottom-0 py-4 w-full text-center ${theme === "light" ? "bg-light-mode text-dark-mode" : "bg-dark-mode text-light-mode"}`}
     >
-      <p>
-        {getLinkElement("https://seanfinch.com", "seanfinch.com")}
-      </p>
+      <p>{getLinkElement("https://seanfinch.com", "seanfinch.com")}</p>
     </footer>
   );
 };
